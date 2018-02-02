@@ -1,0 +1,186 @@
+.df-groups-view {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &.h-align {
+        white-space: nowrap;
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+
+    .df-groups-view-container{
+        padding: 2px 0;
+    }
+
+    .df-group-view-container {
+        width: 100%;
+        height: auto;
+        vertical-align: top;
+        overflow: hidden;
+
+        &.drag-over-before {
+            border-top: 2px solid orange;
+        }
+
+        &.drag-over-after {
+            border-bottom: 2px solid orange;
+        }
+
+        &.h-align {
+            display: inline-block;
+            white-space: nowrap;
+            width: auto;
+            height: 100%;
+            border-right: 1px solid #ddd;
+
+            &.group-collapsed {
+                width: 24px;
+            }
+
+            &.drag-over-before {
+                border-top: none;
+                border-left: 2px solid orange;
+            }
+
+            &.drag-over-after {
+                border-bottom: none;
+                border-right: 2px solid orange;
+            }
+        }
+
+        &.active {
+            .df-group-view-header {
+                color: #3698b3
+            }
+        }
+
+        .df-group-view-header {
+            padding: 3px 1px;
+            position: relative;
+            font-weight: 500;
+            cursor: default;
+
+            &.drag-over {
+                color: #fff;
+                background-color: #3698b3
+            }
+
+            &.h-align {
+                height: 24px;
+                padding-right: 5px;
+
+                &.group-collapsed {
+                    -moz-transform: rotate(90deg);
+                    -ms-transform: rotate(90deg);
+                    -o-transform: rotate(90deg);
+                    -webkit-transform: rotate(90deg);
+                    transform: rotate(90deg);
+                    -moz-transform-origin: left top;
+                    -ms-transform-origin: left top;
+                    -o-transform-origin: left top;
+                    -webkit-transform-origin: left top;
+                    transform-origin: left top;
+                    margin-left: 24px;
+                    margin-top: 1px;
+                    border-bottom: none;
+                }
+            }
+
+            .df-group-view-state {
+                padding: 0 10px 0 6px;
+                cursor: pointer;
+
+                &:hover {
+                    color: #c1c1c1;
+                }
+
+                &:active {
+                    opacity: .7;
+                }
+            }
+
+            .df-group-view-header-text {
+                cursor: default;
+            }
+
+            .df-group-view-toolbar {
+                position: absolute;
+                top: 3px;
+                right: 3px;
+                display: none;
+
+                .df-group-view-toolbar-item {
+                    float: right;
+                    color: #000;
+                    padding: 2px;
+                    cursor: pointer;
+                }
+            }
+
+            &:hover {
+                opacity: .7;
+
+                .df-group-view-toolbar {
+                    display: block;
+                }
+            }
+        }
+
+        .df-group-view-body {
+            width: 100%;
+
+            &.h-align {
+                white-space: nowrap;
+            }
+        }
+
+        .df-group-view-editor {
+            position: absolute;
+            margin: 0;
+            padding: 2px 3px;
+            font-weight: normal;
+            -ms-word-wrap: normal;
+            word-wrap: normal;
+            overflow: hidden;
+            resize: none;
+            border: 1px solid #3698b3;
+            outline: none;
+            color: #555;
+        }
+    }
+
+    .df-group-view-item-container {
+        &:hover {
+        }
+
+        &.active {
+        }
+
+        &.drag-over-before {
+            border-top: 2px solid orange;
+        }
+
+        &.drag-over-after {
+            border-bottom: 2px solid orange;
+        }
+
+        &.h-align {
+            display: inline-block;
+            border-bottom: none;
+            //border-right: 1px solid #ddd;
+
+            &.drag-over-before {
+                border-top: none;
+                border-left: 2px solid orange;
+            }
+
+            &.drag-over-after {
+                border-bottom: none;
+                border-right: 2px solid orange;
+            }
+        }
+    }
+}
